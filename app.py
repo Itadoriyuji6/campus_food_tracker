@@ -29,6 +29,11 @@ st.sidebar.title("Navigation")
 menu = ["Dashboard", "Log Surplus Food", "Data Explorer", "Manage Records"]
 choice = st.sidebar.selectbox("Select a Module", menu)
 
+# --- Add your GitHub link here ---
+st.sidebar.markdown("---")
+st.sidebar.markdown("**Project By:**")
+st.sidebar.markdown("[Shresth Baliyan](https://github.com/Itadoriyuji6)")
+
 # Functions for CRUD operations
 def add_donation(donor, food, qty, expiry):
     c.execute('INSERT INTO donations(donor_name, food_type, quantity, expiry_window, status) VALUES (?,?,?,?,?)',
@@ -149,3 +154,5 @@ elif choice == "Manage Records":
                 st.rerun()
     else:
         st.info("No records to manage.")
+
+
